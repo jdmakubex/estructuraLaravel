@@ -1,8 +1,12 @@
-## Laravel desde Docoker
-- Como primer paso, si estás trabjando en Windows, activa WSL, desde donde levatarás una instancia de Ubuntu. 
+# Laravel desde Docker
+
+## Requisitos previos
+
+### Windows
+- Como primer paso, si estás trabajando en Windows, activa WSL, desde donde levantarás una instancia de Ubuntu. 
 - Instala Docker en windows y configura para que se conecte con WSL, o instala docker en tu instancia de Ubuntu
 
-## Desde ubuntu, crear la carpta que será el espacio de trabajo de tu proyecto
+## Desde ubuntu, crear la carpeta que será el espacio de trabajo de tu proyecto
 ```bash
 mkdir prueba
 ```
@@ -18,12 +22,12 @@ curl -s https://laravel.build/jd | bash
 ```
 Esto, va a crear una carpeta llamada "jd", la cual contendrá la estructura del proyecto. 
 
-## Para personalizar el puerto desde el cual estará expuerto el proyecto, agregar al archivo .env lo siguiente
+## Para personalizar el puerto desde el cual estará expuesto el proyecto, agregar al archivo .env lo siguiente
 ```bash
 APP_PORT=8080
 ```
 
-## Para personalizar el la base de datos y usar mariaDB en lugar de MySQL, configurar el docker-compose.yml
+## Para personalizar la base de datos y usar mariaDB en lugar de MySQL, configurar el docker-compose.yml
 ```bash
 version: '3.8'
 
@@ -149,7 +153,7 @@ volumes:
         driver: local
 ```
 
-## Para Crear con los contenedores y dejarlo corriendo en segundo plano
+## Para Crear los contenedores y dejarlos corriendo en segundo plano
 ```bash
 ./vendor/bin/sail up -d --build
 ```
