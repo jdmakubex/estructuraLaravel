@@ -1,30 +1,30 @@
 ## Laravel desde Docoker
-Como primer paso, si estás trabjando en Windows, activa WSL, desde donde levatarás una instancia de Ubuntu. 
-Instala Docker en windows y configura para que se conecte con WSL, o instala docker en tu instancia de Ubuntu
+- Como primer paso, si estás trabjando en Windows, activa WSL, desde donde levatarás una instancia de Ubuntu. 
+- Instala Docker en windows y configura para que se conecte con WSL, o instala docker en tu instancia de Ubuntu
 
 ## Desde ubuntu, crear la carpta que será el espacio de trabajo de tu proyecto
-´´´
+```bash
 mkdir prueba
-´´´
+```
 
 ## Ubicate en la carpeta desde donde vas a trabajar
-´´´
+```bash
 cd prueba
-´´´
+```
 
 ## Inicia tu proyecto laravel, para este caso mi proyecto se llamará jd
-´´´
+```bash
 curl -s https://laravel.build/jd | bash
-´´´
+```
 Esto, va a crear una carpeta llamada "jd", la cual contendrá la estructura del proyecto. 
 
 ## Para personalizar el puerto desde el cual estará expuerto el proyecto, agregar al archivo .env lo siguiente
-´´´
+```bash
 APP_PORT=8080
-´´´
+```
 
-## Para personoalizar el la base de datos y usar mariaDB en lugar de MySQL, configurar el docker-compose.yml
-´´´
+## Para personalizar el la base de datos y usar mariaDB en lugar de MySQL, configurar el docker-compose.yml
+```bash
 version: '3.8'
 
 services:
@@ -147,29 +147,29 @@ volumes:
         driver: local
     sail-meilisearch:
         driver: local
-´´´
+```
 
 ## Para Crear con los contenedores y dejarlo corriendo en segundo plano
-´´´
+```bash
 ./vendor/bin/sail up -d --build
-´´´
+```
 
 ## Para correr el migrate
-´´´
+```bash
 ./vendor/bin/sail artisan migrate
-´´´
+```
 
 ## Para trabajar con tu proyecto desde visual Studio Code
-´´´
+```bash
 code .
-´´´
+```
 
 ## Para detener el contenedor
-´´´
+```bash
 ./vendor/bin/sail down -v
-´´´
+```
 
 ## Verifica el proyecto desde el navegador
-´´´
+```bash
 localhost:8080
-´´´
+```
